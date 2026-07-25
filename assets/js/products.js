@@ -1,93 +1,115 @@
 // ══════════════════════════════════════════════════════════════
+//  SUPABASE CONFIG
+//  Fill these in from your Supabase project → Settings → API.
+//  The anon/public key is safe to expose here — it's rate-limited
+//  and RLS-protected (read-only, active rows only). See README.
+// ══════════════════════════════════════════════════════════════
+
+const SUPABASE_URL      = 'https://jczhfwtvmwmemysazncl.supabase.co';       // e.g. https://xxxxx.supabase.co
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impjemhmd3R2bXdtZW15c2F6bmNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ5MjI5MTQsImV4cCI6MjEwMDQ5ODkxNH0.nAKI1suIqpGFBjYZGdzBcXMDUGplVyhMWb4sJnTtjBc';
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
+// ══════════════════════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════════════════════
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTouchSwipe();
-  shuffleAllCards();
-  initAutoSlider();
-  initSavedPins();
+  renderSkeletons();
+  loadProducts();
 });
 
 
 // ═════════════════════════════════════════════════════════════════════
-//  product data. you can also pick products here if you want ( ͡° ͜ʖ ͡°)
+//  product data — now fetched from Supabase instead of hardcoded.
+//  PRODUCTS keeps the same shape/keys the rest of the app expects
+//  (e.g. shopee_best_1, shopee_fashion) so renderCards(), search.js,
+//  and routeTo() don't need to change.
 // ═════════════════════════════════════════════════════════════════════
 
-const PRODUCTS = {
-  shopee_best_1: [
-    { title: "Stainless Stove Rack Keeps Small Pots Stable", alt: "Stainless Stove Rack", href: "https://invl.me/clngowe", img: "assets/images/featured/s1.png" },
-    { title: "Waterproof School Backpack Fits Laptop & Books", alt: "Waterproof School Backpack", href: "https://invl.me/clngowg", img: "assets/images/featured/s2.png" },
-    { title: "10pcs Gel Pens Write Smooth & Dry Fast", alt: "Gel Pens", href: "https://invl.me/clngowi", img: "assets/images/featured/s3.png" },
-    { title: "Cotton Mid-Cut Socks Keep Feet Fresh All Day", alt: "Cotton Mid-Cut Socks", href: "https://invl.me/clngowj", img: "assets/images/featured/s4.png" },
-    { title: "Mini USB Humidifier Adds Calm to Any Space", alt: "Mini USB Humidifier", href: "https://invl.me/clngowo", img: "assets/images/featured/s5.png" },
-    { title: "7-in-1 Stationery Set Has 7 Tools in One Pack", alt: "7-in-1 Stationery Set", href: "https://invl.me/clngowq", img: "assets/images/featured/s6.png" },
-    { title: "10 Pairs Cotton Socks Keep Feet Cool & Comfy", alt: "10 Pairs Cotton Socks", href: "https://invl.me/clngowr", img: "assets/images/featured/s7.png" },
-    { title: "A5 Spiral Notebook Set Smooth Writing & Thick Pages", alt: "A5 Spiral Notebook Set", href: "https://invl.me/clngowt", img: "assets/images/featured/s8.png" },
-    { title: "VeryMall Crew Socks 5–10 Pairs for Daily Comfort", alt: "VeryMall Crew Socks", href: "https://invl.me/clngowu", img: "assets/images/featured/s9.png" },
-    { title: "EVO GT-PRO Helmet with Dual Visor Protection", alt: "EVO GT-PRO Helmet", href: "https://invl.me/clngowv", img: "assets/images/featured/s10.png" }
-  ],
-  shopee_best_2: [
-    { title: "Korean Nylon Backpack Is Waterproof & Stylish", alt: "Korean Nylon Backpack", href: "https://invl.me/clngoww", img: "assets/images/featured/s11.png" },
-    { title: "MPMG Oversized Tees Buy 1 Get 3 Deal", alt: "MPMG Oversized Tees", href: "https://invl.me/clngowy", img: "assets/images/featured/s12.png" },
-    { title: "Korean Running Shoes Feel Light & Comfortable", alt: "Korean Running Shoes", href: "https://invl.me/clngowz", img: "assets/images/featured/s13.png" },
-    { title: "Korean Sneakers Are Breathable & Comfortable", alt: "Korean Sneakers", href: "https://invl.me/clngox0", img: "assets/images/featured/s14.png" },
-    { title: "E88 Pro Drone Has 4K Camera & 150m Range", alt: "E88 Pro Drone", href: "https://invl.me/clngox2", img: "assets/images/featured/s15.png" },
-    { title: "Light Sole Sports Shoes Feel Comfortable All Day", alt: "Light Sole Sports Shoes", href: "https://invl.me/clngox3", img: "assets/images/featured/s16.png" },
-    { title: "Naviforce NF9117 Watch Looks Premium & Sporty", alt: "Naviforce NF9117 Watch", href: "https://invl.me/clngox4", img: "assets/images/featured/s17.png" },
-    { title: "Casual Leather Shoes Match Any Everyday Outfit", alt: "Casual Leather Shoes", href: "https://invl.me/clngox5", img: "assets/images/featured/s18.png" },
-    { title: "Lovito Striped Jumpsuit Is Perfect for Warm Days", alt: "Lovito Striped Jumpsuit", href: "https://invl.me/clngox7", img: "assets/images/featured/s19.png" },
-    { title: "Retro Striped Tee Gives Effortless Streetwear Style", alt: "Retro Striped Tee", href: "https://invl.me/clngox9", img: "assets/images/featured/s20.png" }
-  ],
-  shopee_fashion: [
-    { title: "Lovito Boho Dress Adds Effortless Summer Charm", alt: "Lovito Boho Dress", href: "https://invl.me/clngv3j", img: "assets/images/platforms/shopee/Fashion/sfash1.webp" },
-    { title: "3pcs Ladies Boxer Shorts Feel Soft & Comfy", alt: "3pcs Ladies Boxer Shorts", href: "https://invl.me/clngv3k", img: "assets/images/platforms/shopee/Fashion/sfash2.webp" },
-    { title: "Lovito Resort Dress Perfect for Summer Getaways", alt: "Lovito Resort Dress", href: "https://invl.me/clngv3l", img: "assets/images/platforms/shopee/Fashion/sfash3.webp" },
-    { title: "Lovito Belted Dress Has Pockets & Easy Style", alt: "Lovito Belted Dress", href: "https://invl.me/clngv3n", img: "assets/images/platforms/shopee/Fashion/sfash4.webp" },
-    { title: "Lovito Mesh Dress Gives Elegant Feminine Style", alt: "Lovito Mesh Dress", href: "https://invl.me/clngv3o", img: "assets/images/platforms/shopee/Fashion/sfash5.webp", imgClass: "pin-portrait" },
-    { title: "Lovito Elegant Cardigan Matches Every Outfit Easily", alt: "Lovito Elegant Cardigan", href: "https://invl.me/clngv3p", img: "assets/images/platforms/shopee/Fashion/sfash6.webp" },
-    { title: "Lovito Button Cardigan Adds Effortless Casual Style", alt: "Lovito Button Cardigan", href: "https://invl.me/clngv3r", img: "assets/images/platforms/shopee/Fashion/sfash7.webp" },
-    { title: "INSPI Textured Cardigan Gives Effortless Clean Style", alt: "INSPI Textured Cardigan", href: "https://invl.me/clngv3s", img: "assets/images/platforms/shopee/Fashion/sfash8.webp" },
-    { title: "Harmony Maxi Dress Gives Elegant Flowy Style", alt: "Harmony Maxi Dress", href: "https://invl.me/clngv3v", img: "assets/images/platforms/shopee/Fashion/sfash9.webp" },
-    { title: "YISO Pajama Set Feels Soft & Extra Comfy", alt: "YISO Pajama Set", href: "https://invl.me/clngv3w", img: "assets/images/platforms/shopee/Fashion/sfash10.webp" }
-  ],
-  shopee_electronics: [
-    { title: "Orashare Mini Fan Fits Anywhere & Cools Fast", alt: "Orashare Mini Fan", href: "https://invl.me/clngv3y", img: "assets/images/platforms/shopee/Electronics/selec1.webp" },
-    { title: "GOOJODOQ Turbo Mini Fan Has Strong Cooling Power", alt: "GOOJODOQ Turbo Mini Fan", href: "https://invl.me/clngv3z", img: "assets/images/platforms/shopee/Electronics/selec2.webp" },
-    { title: "TECNO SPARK GO 3 Has 120Hz Display & 5000mAh Battery", alt: "TECNO SPARK GO 3", href: "https://invl.me/clngv40", img: "assets/images/platforms/shopee/Electronics/selec3.webp" },
-    { title: "Orashare Capsule Powerbank Fits in Your Pocket", alt: "Orashare Capsule Powerbank", href: "https://invl.me/clngv42", img: "assets/images/platforms/shopee/Electronics/selec4.webp" },
-    { title: "Cordless Rechargeable Fan Runs for Hours Anywhere", alt: "Cordless Rechargeable Fan", href: "https://invl.me/clngv43", img: "assets/images/platforms/shopee/Electronics/selec5.webp", imgClass: "pin-portrait" },
-    { title: "HUAWEI Band 11 Makes Fitness Tracking Effortless", alt: "HUAWEI Band 11", href: "https://invl.me/clngv44", img: "assets/images/platforms/shopee/Electronics/selec6.webp" },
-    { title: "Samsung Galaxy A25/A26 Delivers Smooth Everyday Performance", alt: "Samsung Galaxy A25/A26", href: "https://invl.me/clngv45", img: "assets/images/platforms/shopee/Electronics/selec7.webp" },
-    { title: "Xiaomi Mi Pad Handles Gaming, Streaming & Multitasking", alt: "Xiaomi Mi Pad", href: "https://invl.me/clngv46", img: "assets/images/platforms/shopee/Electronics/selec8.webp" },
-    { title: "Galaxy Tab S9 Is Built for Gaming & Productivity", alt: "Galaxy Tab S9", href: "https://invl.me/clngv48", img: "assets/images/platforms/shopee/Electronics/selec9.webp" },
-    { title: "EMEET C60E Webcam Delivers Crisp 4K Video Quality", alt: "EMEET C60E Webcam", href: "https://invl.me/clngv49", img: "assets/images/platforms/shopee/Electronics/selec10.webp" }
-  ],
-  shopee_health: [
-    { title: "Originote Ceramella Sunscreen SPF50 Is a Bestseller", alt: "Originote Ceramella Sunscreen SPF50", href: "https://invl.me/clngv4i", img: "assets/images/platforms/shopee/Health/sheal1.webp" },
-    { title: "SKINEVER Sunscreen Lotion Is Buy 1 Take 1", alt: "SKINEVER Sunscreen Lotion", href: "https://invl.me/clngv4j", img: "assets/images/platforms/shopee/Health/sheal2.webp" },
-    { title: "Luxe Organix Maxshield Sunscreen Protects Face & Body", alt: "Luxe Organix Maxshield Sunscreen", href: "https://invl.me/clngv4k", img: "assets/images/platforms/shopee/Health/sheal3.webp" },
-    { title: "MinoxiPlus 5% Helps Support Hair Growth Routine", alt: "MinoxiPlus 5%", href: "https://invl.me/clngv4m", img: "assets/images/platforms/shopee/Health/sheal4.webp" },
-    { title: "Kérastase Genesis Serum Helps Reduce Hair Fall", alt: "Kérastase Genesis Serum", href: "https://invl.me/clngv4n", img: "assets/images/platforms/shopee/Health/sheal5.webp" },
-    { title: "Black Sesame Hair Serum Supports Healthier Hair Growth", alt: "Black Sesame Hair Serum", href: "https://invl.me/clngv4o", img: "assets/images/platforms/shopee/Health/sheal6.webp" },
-    { title: "Bodywise Rosemary Serum Supports Stronger-Looking Hair", alt: "Bodywise Rosemary Serum", href: "https://invl.me/clngv4r", img: "assets/images/platforms/shopee/Health/sheal7.webp" },
-    { title: "Rogaine 5% Foam Supports Hair Regrowth Routine", alt: "Rogaine 5% Foam", href: "https://invl.me/clngv4x", img: "assets/images/platforms/shopee/Health/sheal8.webp" },
-    { title: "Dermorepubliq Niacinamide Serum Helps Brighten Skin", alt: "Dermorepubliq Niacinamide Serum", href: "https://invl.me/clngv4y", img: "assets/images/platforms/shopee/Health/sheal9.webp" },
-    { title: "Dermorepubliq Glycolic Toner Helps Smooth & Refresh Skin", alt: "Dermorepubliq Glycolic Toner", href: "https://invl.me/clngv4z", img: "assets/images/platforms/shopee/Health/sheal10.webp" }
-  ],
-  shopee_groceries: [
-    { title: "DUJOSOO Black Coffee Has High Protein & Zero Fat", alt: "DUJOSOO Black Coffee", href: "https://invl.me/clngv5l", img: "assets/images/platforms/shopee/Groceries/scons1.webp" },
-    { title: "Mood Food Peanut Butter Packs High Protein Energy", alt: "Mood Food Peanut Butter", href: "https://invl.me/clngv5m", img: "assets/images/platforms/shopee/Groceries/scons2.webp" },
-    { title: "ON Gold Standard Whey Is a Top Protein Pick", alt: "ON Gold Standard Whey", href: "https://invl.me/clngv5n", img: "assets/images/platforms/shopee/Groceries/scons3.webp" },
-    { title: "Blitz Protein Bars Make High Protein Snacking Easy", alt: "Blitz Protein Bars", href: "https://invl.me/clngv5o", img: "assets/images/platforms/shopee/Groceries/scons4.webp" },
-    { title: "Anchor Protein Plus Milk Is Buy 2 Take 1", alt: "Anchor Protein Plus Milk", href: "https://invl.me/clngv5q", img: "assets/images/platforms/shopee/Groceries/scons5.webp" },
-    { title: "Pure Form Creatine Helps Support Strength & Muscle Growth", alt: "Pure Form Creatine", href: "https://invl.me/clngv5r", img: "assets/images/platforms/shopee/Groceries/scons6.webp" },
-    { title: "ON Creatine Powder Supports Strength & Workout Performance", alt: "ON Creatine Powder", href: "https://invl.me/clngv5s", img: "assets/images/platforms/shopee/Groceries/scons7.webp" },
-    { title: "ATC Fish Oil Supports Everyday Wellness & Nutrition", alt: "ATC Fish Oil", href: "https://invl.me/clngv5t", img: "assets/images/platforms/shopee/Groceries/scons8.webp" },
-    { title: "VTEAY Omega 3 Combines Fish Oil & Collagen Support", alt: "VTEAY Omega 3", href: "https://invl.me/clngv5u", img: "assets/images/platforms/shopee/Groceries/scons9.webp" },
-    { title: "Herbalife F1 Shake Makes High Protein Nutrition Easy", alt: "Herbalife F1 Shake", href: "https://invl.me/clngv5v", img: "assets/images/platforms/shopee/Groceries/scons10.webp" }
-  ],
-};
+const PRODUCTS = {};
+
+async function loadProducts() {
+  try {
+    const { data, error } = await sb
+      .from('products')
+      .select('platform, section, category, title, alt, href, img, img_class, sort_order')
+      .eq('active', true)
+      .order('section', { ascending: true })
+      .order('sort_order', { ascending: true });
+
+    if (error) throw error;
+
+    (data || []).forEach(row => {
+      const key = `${row.platform}_${row.section}`;
+      if (!PRODUCTS[key]) PRODUCTS[key] = [];
+      PRODUCTS[key].push({
+        title: row.title,
+        alt: row.alt,
+        href: row.href,
+        img: row.img,
+        ...(row.img_class ? { imgClass: row.img_class } : {})
+      });
+    });
+
+    renderAllCards();
+
+    initTouchSwipe();
+    shuffleAllCards();
+    initAutoSlider();
+    initSavedPins();
+    if (window.rebuildSearchIndex) window.rebuildSearchIndex();
+
+  } catch (err) {
+    console.error('Failed to load products from Supabase:', err);
+    clearSkeletons();
+  }
+}
+
+
+// ══════════════════════════════════════════════════════════════
+//  SKELETON LOADER
+//  Shown immediately on load, before the Supabase fetch resolves.
+//  renderCards() overwrites these containers' innerHTML once real
+//  data arrives, so no separate "clear" step is needed on success.
+// ══════════════════════════════════════════════════════════════
+
+const CARD_CONTAINER_IDS = [
+  'shopee-best-1', 'shopee-best-2',
+  'shopee-fashion', 'shopee-electronics', 'shopee-health', 'shopee-groceries'
+];
+
+function skeletonCardHTML() {
+  return `
+    <div class="card-skeleton">
+      <div class="skeleton-img"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-footer">
+          <div class="skeleton-cta"></div>
+          <div class="skeleton-save"></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderSkeletons(count = 6) {
+  CARD_CONTAINER_IDS.forEach(id => {
+    const container = document.getElementById(id);
+    if (!container) return;
+    container.innerHTML = skeletonCardHTML().repeat(count);
+  });
+}
+
+function clearSkeletons() {
+  CARD_CONTAINER_IDS.forEach(id => {
+    const container = document.getElementById(id);
+    if (container) container.innerHTML = '';
+  });
+}
 
 
 // ══════════════════════════════════════════════════════════════
@@ -120,12 +142,14 @@ function renderCards(containerId, productArray, platform) {
 //  RENDER ALL CARDS
 // ══════════════════════════════════════════════════════════════
 
-renderCards('shopee-best-1',       PRODUCTS.shopee_best_1,       'Shopee');
-renderCards('shopee-best-2',       PRODUCTS.shopee_best_2,       'Shopee');
-renderCards('shopee-fashion',      PRODUCTS.shopee_fashion,      'Shopee');
-renderCards('shopee-electronics',  PRODUCTS.shopee_electronics,  'Shopee');
-renderCards('shopee-health',       PRODUCTS.shopee_health,       'Shopee');
-renderCards('shopee-groceries',    PRODUCTS.shopee_groceries,    'Shopee');
+function renderAllCards() {
+  renderCards('shopee-best-1',       PRODUCTS.shopee_best_1,       'Shopee');
+  renderCards('shopee-best-2',       PRODUCTS.shopee_best_2,       'Shopee');
+  renderCards('shopee-fashion',      PRODUCTS.shopee_fashion,      'Shopee');
+  renderCards('shopee-electronics',  PRODUCTS.shopee_electronics,  'Shopee');
+  renderCards('shopee-health',       PRODUCTS.shopee_health,       'Shopee');
+  renderCards('shopee-groceries',    PRODUCTS.shopee_groceries,    'Shopee');
+}
 
 
 // ══════════════════════════════════════════════════════════════

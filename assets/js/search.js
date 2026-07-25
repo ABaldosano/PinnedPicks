@@ -257,6 +257,7 @@
     }
   });
 
+  window.rebuildSearchIndex = buildIndex;
   buildIndex();
 
 })();
