@@ -8,22 +8,12 @@
   const PLATFORM_MAP = {
     shopee_best_1: 'Shopee', shopee_best_2: 'Shopee',
     shopee_fashion: 'Shopee', shopee_electronics: 'Shopee',
-    shopee_health: 'Shopee', shopee_groceries: 'Shopee',
-    shein_best_1: 'SHEIN', shein_best_2: 'SHEIN',
-    shein_mens: 'SHEIN', shein_womens: 'SHEIN',
-    shein_decor: 'SHEIN', shein_accessories: 'SHEIN',
-    amazon_best_1: 'Amazon', amazon_best_2: 'Amazon',
-    amazon_fashion: 'Amazon', amazon_electronics: 'Amazon',
-    amazon_health: 'Amazon', amazon_groceries: 'Amazon'
+    shopee_health: 'Shopee', shopee_groceries: 'Shopee'
   };
 
   const CATEGORY_MAP = {
     shopee_fashion: 'Fashion', shopee_electronics: 'Electronics',
-    shopee_health: 'Health & Beauty', shopee_groceries: 'Groceries',
-    shein_mens: "Men's Fashion", shein_womens: "Women's Fashion",
-    shein_decor: 'Decor', shein_accessories: 'Accessories',
-    amazon_fashion: 'Fashion', amazon_electronics: 'Electronics',
-    amazon_health: 'Health & Beauty', amazon_groceries: 'Groceries'
+    shopee_health: 'Health & Beauty', shopee_groceries: 'Groceries'
   };
 
   let PRODUCT_INDEX = [];
@@ -51,9 +41,7 @@
   }
 
   function platformClass(p) {
-    if (p === 'Shopee') return 'srp-shopee';
-    if (p === 'Amazon') return 'srp-amazon';
-    return 'srp-shein';
+    return 'srp-shopee';
   }
 
   function isMobile() { return window.innerWidth <= 600; }
@@ -242,7 +230,7 @@
       ? `<div class="svp-empty" style="grid-column:1/-1">
            <div class="svp-empty-icon">&#9906;</div>
            <p class="svp-empty-title">No results found</p>
-           <p class="svp-empty-sub">Try "bag", "shopee", "fashion", or "Amazon".</p>
+           <p class="svp-empty-sub">Try "bag", "shopee", or "fashion".</p>
          </div>`
       : results.map(r => `
           <a class="card" href="${r.href}" target="_blank" rel="noopener nofollow" aria-label="View ${r.title} on ${r.platform}" data-product="${r.title}" data-platform="${r.platform}" data-category="${r.category || ''}">

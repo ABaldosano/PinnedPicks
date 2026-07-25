@@ -87,110 +87,6 @@ const PRODUCTS = {
     { title: "VTEAY Omega 3 Combines Fish Oil & Collagen Support", alt: "VTEAY Omega 3", href: "https://invl.me/clngv5u", img: "assets/images/platforms/shopee/Groceries/scons9.webp" },
     { title: "Herbalife F1 Shake Makes High Protein Nutrition Easy", alt: "Herbalife F1 Shake", href: "https://invl.me/clngv5v", img: "assets/images/platforms/shopee/Groceries/scons10.webp" }
   ],
-  shein_best_1: [
-    { title: "Shimmery Knit Shawl Adds Effortless Summer Style", alt: "Shimmery Knit Shawl", href: "https://onelink.shein.com/6/5oro8c2supf6", img: "assets/images/featured/sh1.jpg" },
-    { title: "Off-Shoulder Knit Mini Dress Turns Heads Instantly", alt: "Off-Shoulder Knit Mini Dress", href: "https://onelink.shein.com/6/5oroptho5jxz", img: "assets/images/featured/sh2.jpg" },
-    { title: "Minimalist Knit Cardigan Perfect for Everyday Layers", alt: "Minimalist Knit Cardigan", href: "https://onelink.shein.com/6/5orp5tmp1kqw", img: "assets/images/featured/sh3.jpg" },
-    { title: "V-Neck Knit Top Gives Effortless Elegant Style", alt: "V-Neck Knit Top", href: "https://onelink.shein.com/6/5orpbcwtfthv", img: "assets/images/featured/sh4.jpg" },
-    { title: "Sequin Knit Cover Up Elevates Beach Outfits", alt: "Sequin Knit Cover Up", href: "https://onelink.shein.com/6/5orpf13vlg63", img: "assets/images/featured/sh5.jpg" },
-    { title: "Backless Halter Dress Made for Summer Vacations", alt: "Backless Halter Dress", href: "https://onelink.shein.com/6/5orpjyoo4fmf", img: "assets/images/featured/sh6.jpg" },
-    { title: "Hollow-Out Knit Tee Elevates Everyday Outfits", alt: "Hollow-Out Knit Tee", href: "https://onelink.shein.com/6/5orpnouruz45", img: "assets/images/featured/sh7.jpg" },
-    { title: "Retro Knit Polo Shirt Gives Effortless Summer Style", alt: "Retro Knit Polo Shirt", href: "https://onelink.shein.com/6/5orpriyxnaz0", img: "assets/images/featured/sh8.jpg" },
-    { title: "Lace Patchwork Bodysuit Gives Bold Y2K Vibes", alt: "Lace Patchwork Bodysuit", href: "https://onelink.shein.com/6/5orpudkjiux0", img: "assets/images/featured/sh9.jpg" },
-    { title: "V-Neck Printed Dress Flatters for Summer Days", alt: "V-Neck Printed Dress", href: "https://onelink.shein.com/6/5orpyxc3y82", img: "assets/images/featured/sh10.jpg" }
-  ],
-  shein_best_2: [
-    { title: "Striped Colorblock Shirt Perfect for Summer Fits", alt: "Striped Colorblock Shirt", href: "https://onelink.shein.com/6/5otjx38x09cs", img: "assets/images/featured/sh11.jpg" },
-    { title: "Striped Button Shirt Gives Clean Old Money Style", alt: "Striped Button Shirt", href: "https://onelink.shein.com/6/5otk1qyj6voy", img: "assets/images/featured/sh12.jpg" },
-    { title: "Textured Knit Polo Gives Effortless Old Money Style", alt: "Textured Knit Polo", href: "https://onelink.shein.com/6/5otk64t0km2k", img: "assets/images/featured/sh13.jpg" },
-    { title: "Elegant White Dress Shirt for Office & Formal Wear", alt: "Elegant White Dress Shirt", href: "https://onelink.shein.com/6/5otkauhocu8f", img: "assets/images/featured/sh14.jpg" },
-    { title: "Colorblock Polo Shirt Gives Classic Summer Style", alt: "Colorblock Polo Shirt", href: "https://onelink.shein.com/6/5otkdd932iah", img: "assets/images/featured/sh15.jpg" },
-    { title: "Textured Knit Polo Gives Effortless Vacation Style", alt: "Textured Knit Polo", href: "https://onelink.shein.com/6/5otkghpuuzbi", img: "assets/images/featured/sh16.jpg" },
-    { title: "Vintage Bowling Shirt Gives Relaxed Summer Style", alt: "Vintage Bowling Shirt", href: "https://onelink.shein.com/6/5otkphaxfhr9", img: "assets/images/featured/sh17.jpg" },
-    { title: "Striped Polo & Shorts Set Makes Summer Easy", alt: "Striped Polo & Shorts", href: "https://onelink.shein.com/6/5otkt3iyrlln", img: "assets/images/featured/sh18.jpg" },
-    { title: "Acid Wash Tee Gives Effortless Streetwear Style", alt: "Acid Wash Tee", href: "https://onelink.shein.com/6/5otkwvo3k37v", img: "assets/images/featured/sh19.jpg" },
-    { title: "Japanese Crane Tee Gives Clean Minimalist Style", alt: "Japanese Crane Tee", href: "https://onelink.shein.com/6/5otl214zr787", img: "assets/images/featured/sh20.jpg" }
-  ],
-  shein_mens: [
-    { title: "Textured Polo Shirt Gives Clean Minimalist Style", alt: "Textured Polo Shirt", href: "https://onelink.shein.com/7/5p9fza9557vu", img: "assets/images/platforms/shein/MensFashion/shmen1.jpg" },
-    { title: "Mountain Print Tee Gives Clean Outdoor Style", alt: "Mountain Print Tee", href: "https://onelink.shein.com/7/5p9g8jpd6hoz", img: "assets/images/platforms/shein/MensFashion/shmen2.jpg" },
-    { title: "SWAVVY Cargo Shirt Gives Modern Streetwear Style", alt: "SWAVVY Cargo Shirt", href: "https://onelink.shein.com/7/5p9gfo7dsx7x", img: "assets/images/platforms/shein/MensFashion/shmen3.jpg" },
-    { title: "Contrast Trim Polo Gives Effortless Old Money Style", alt: "Contrast Trim Polo", href: "https://onelink.shein.com/7/5p9grgf0x7hh", img: "assets/images/platforms/shein/MensFashion/shmen4.jpg" },
-    { title: "Manfinity Overcoat Gives Effortless Old Money Style", alt: "Manfinity Overcoat", href: "https://onelink.shein.com/7/5p9gzqcok5e3", img: "assets/images/platforms/shein/MensFashion/shmen5.jpg" }
-  ],
-  shein_womens: [
-    { title: "SHEIN LUNE Cardigan Adds Effortless Cozy Style", alt: "SHEIN LUNE Cardigan", href: "https://onelink.shein.com/7/5p9h9dm4unt6", img: "assets/images/platforms/shein/WomensFashion/shwmen1.jpg" },
-    { title: "Rhinestone Jeans Add Glam to Casual Outfits", alt: "Rhinestone Jeans", href: "https://onelink.shein.com/7/5p9hiszg83m7", img: "assets/images/platforms/shein/WomensFashion/shwmen2.jpg" },
-    { title: "Y2K Cropped Tee Gives Effortless Streetwear Style", alt: "Y2K Cropped Tee", href: "https://onelink.shein.com/7/5p9hrwikxwrg", img: "assets/images/platforms/shein/WomensFashion/shwmen3.jpg" },
-    { title: "Black Fitted Shorts Match Every Summer Outfit", alt: "Black Fitted Shorts", href: "https://onelink.shein.com/7/5p9i6p8xcq3w", img: "assets/images/platforms/shein/WomensFashion/shwmen4.jpg" },
-    { title: "Off Shoulder Knit Cardigan Gives Soft Girl Vibes", alt: "Off Shoulder Knit Cardigan", href: "https://onelink.shein.com/7/5p9ifkvxkwtq", img: "assets/images/platforms/shein/WomensFashion/shwmen5.jpg" }
-  ],
-  shein_decor: [
-    { title: 'Funny "My World" Rug Adds Personality to Any Room', alt: "Funny My World Rug", href: "https://onelink.shein.com/7/5p9iv39ogfto", img: "assets/images/platforms/shein/Decor/shdec1.jpg" },
-    { title: "Tufted Duvet Cover Set Gives Luxury Hotel Vibes", alt: "Tufted Duvet Cover Set", href: "https://onelink.shein.com/7/5p9j5s0pfub6", img: "assets/images/platforms/shein/Decor/shdec2.jpg" },
-    { title: "Ruffled Bed Skirt Makes Bedrooms Look More Elegant", alt: "Ruffled Bed Skirt", href: "https://onelink.shein.com/7/5p9je5wfo8ic", img: "assets/images/platforms/shein/Decor/shdec3.jpg" },
-    { title: "Plush Thick Carpet Makes Any Room Feel Cozier", alt: "Plush Thick Carpet", href: "https://onelink.shein.com/7/5p9jo3111gqr", img: "assets/images/platforms/shein/Decor/shdec4.jpg" },
-    { title: "Geometric Pillow Covers Instantly Elevate Your Space", alt: "Geometric Pillow Covers", href: "https://onelink.shein.com/7/5p9jyfxvcjd5", img: "assets/images/platforms/shein/Decor/shdec5.jpg" }
-  ],
-  shein_accessories: [
-    { title: "Vintage Pearl Earrings Add Elegant French Girl Style", alt: "Vintage Pearl Earrings", href: "https://onelink.shein.com/7/5p9kb3pzvnkq", img: "assets/images/platforms/shein/Accessories/shacc1.jpg" },
-    { title: "Vintage Sunflower Ring Adds a Soft Feminine Touch", alt: "Vintage Sunflower Ring", href: "https://onelink.shein.com/7/5p9kon2n6rk0", img: "assets/images/platforms/shein/Accessories/shacc2.jpg" },
-    { title: "Luxury CZ Earrings Add Instant Glam to Any Outfit", alt: "Luxury CZ Earrings", href: "https://onelink.shein.com/7/5p9kvxhr1ukt", img: "assets/images/platforms/shein/Accessories/shacc3.jpg" },
-    { title: "Minimalist Pendant Necklace Completes Any Casual Look", alt: "Minimalist Pendant Necklace", href: "https://onelink.shein.com/7/5p9l4l8muip8", img: "assets/images/platforms/shein/Accessories/shacc4.jpg" },
-    { title: "800pcs Jewelry Kit Makes DIY Accessories More Fun", alt: "800pcs Jewelry Kit", href: "https://onelink.shein.com/7/5p9lc3jve90i", img: "assets/images/platforms/shein/Accessories/shacc5.jpg" }
-  ],
-  amazon_best_1: [
-    { title: "Why Everyone Is Buying This Owala Water Bottle", alt: "Owala Water Bottle", href: "https://amzn.to/48FxKfk", img: "assets/images/featured/1.jpg" },
-    { title: "This Stanley Tumbler Has 91,000+ Reviews - And It's 38% Off Right Now", alt: "Stanley Tumbler", href: "https://amzn.to/4ul4JOf", img: "assets/images/featured/2.jpg" },
-    { title: "Etekcity Kitchen Scale Is a Meal Prep Bestseller", alt: "Etekcity Kitchen Scale", href: "https://amzn.to/4waDUxW", img: "assets/images/featured/3.jpg" },
-    { title: "HydroJug Traveler Tumbler Is 32oz On-the-Go Must", alt: "HydroJug Traveler Tumbler", href: "https://amzn.to/4d2fbDv", img: "assets/images/featured/4.jpg" },
-    { title: "Bella Slim Toaster Fits Anywhere - 6 Shade Settings", alt: "Bella Slim Toaster", href: "https://amzn.to/4urOS0m", img: "assets/images/featured/5.jpg" },
-    { title: "2-in-1 Olive Oil Sprayer Controls Every Pour", alt: "Olive Oil Sprayer", href: "https://amzn.to/4d2Cehd", img: "assets/images/featured/6.jpg" },
-    { title: "Instant Read Meat Thermometer in 2 Seconds", alt: "Meat Thermometer", href: "https://amzn.to/4w4X9Jz", img: "assets/images/featured/7.jpg" },
-    { title: "Hanes Boxer Briefs Keep You Cool All Day", alt: "Hanes Boxer Briefs", href: "https://amzn.to/3P05TzS", img: "assets/images/featured/8.jpg" },
-    { title: "OEAK Deep V Wireless Bra Shapes & Lifts Comfortably", alt: "OEAK Deep V Wireless Bra", href: "https://amzn.to/3P6mtOz", img: "assets/images/featured/9.jpg" },
-    { title: "Crocs Classic Clogs Everyone Loves for Comfort", alt: "Crocs Classic Clogs", href: "https://amzn.to/4nb7385", img: "assets/images/featured/10.jpg" }
-  ],
-  amazon_best_2: [
-    { title: "OFEEFAN V Neck Blouse Is a Casual Style Favorite", alt: "OFEEFAN V Neck Blouse", href: "https://amzn.to/49cOrik", img: "assets/images/featured/11.jpg" },
-    { title: "Hanes Undershirts Stay Tucked All Day Comfort", alt: "Hanes Undershirts", href: "https://amzn.to/4cWiX0U", img: "assets/images/featured/12.jpg" },
-    { title: "LetsJoli Wireless Bra Offers Full Support & Comfort", alt: "LetsJoli Wireless Bra", href: "https://amzn.to/4d6ZNpu", img: "assets/images/featured/13.jpg" },
-    { title: "COCOMARTS Jelly Bra Feels Like Wearing Nothing", alt: "COCOMARTS Jelly Bra", href: "https://amzn.to/4tgG0d0", img: "assets/images/featured/14.jpg" },
-    { title: "OEAK Jelly Bra Gives Full Support Without Wires", alt: "OEAK Jelly Bra", href: "https://amzn.to/4tOkk9d", img: "assets/images/featured/15.jpg" },
-    { title: "Owala SmoothSip Tumbler Keeps Drinks Hot 6 Hrs", alt: "Owala SmoothSip Tumbler", href: "https://amzn.to/3QPXbVo", img: "assets/images/featured/16.jpg" },
-    { title: "Fullstar Pro Chopper Dices Veggies in 30 Sec", alt: "Fullstar Pro Chopper", href: "https://amzn.to/3RlLIwR", img: "assets/images/featured/17.jpg" },
-    { title: "Socomi Gauze Table Runner Elevates Any Table", alt: "Socomi Gauze Table Runner", href: "https://amzn.to/4tRA6Ad", img: "assets/images/featured/18.jpg" },
-    { title: "Old Money V Neck Tee Is a Go-To for Casual Outfits", alt: "Old Money V Neck Tee", href: "https://amzn.to/4newOVj", img: "assets/images/featured/19.jpg" },
-    { title: "WIHOLL Mock Neck Blouse Elevates Any Outfit", alt: "WIHOLL Mock Neck Blouse", href: "https://amzn.to/4neBJp1", img: "assets/images/featured/20.jpg" }
-  ],
-  amazon_fashion: [
-    { title: "PRETTYGARDEN Dress Looks Elegant for Any Occasion", alt: "PRETTYGARDEN Dress", href: "https://amzn.to/4dGmWQT", img: "assets/images/platforms/amazon/Fashion/fash1.jpg" },
-    { title: "Eyelet Lace Dress Gives Soft Feminine Summer Style", alt: "Eyelet Lace Dress", href: "https://amzn.to/4dltKlv", img: "assets/images/platforms/amazon/Fashion/fash2.jpg" },
-    { title: "AUTOMET Two Piece Set Makes Summer Outfits Easy", alt: "AUTOMET Two Piece Set", href: "https://amzn.to/4nowJ18", img: "assets/images/platforms/amazon/Fashion/fash3.jpg" },
-    { title: "AUTOMET Lounge Set Gives Effortless Clean Girl Style", alt: "AUTOMET Lounge Set", href: "https://amzn.to/4woBps4", img: "assets/images/platforms/amazon/Fashion/fash4.jpg" },
-    { title: "MARZXIN Lounge Set Is Perfect for Summer Trips", alt: "MARZXIN Lounge Set", href: "https://amzn.to/4ubvDZr", img: "assets/images/platforms/amazon/Fashion/fash5.jpg" }
-  ],
-  amazon_electronics: [
-    { title: "Raycon Fitness Earbuds Deliver Powerful Workout Audio", alt: "Raycon Fitness Earbuds", href: "https://amzn.to/42tl73w", img: "assets/images/platforms/amazon/Electronics/elec1.jpg" },
-    { title: "Bluetooth 5.4 Earbuds Give Clear Sound Anywhere", alt: "Bluetooth 5.4 Earbuds", href: "https://amzn.to/4eL9v3i", img: "assets/images/platforms/amazon/Electronics/elec2.jpg" },
-    { title: "Smart Touchscreen Earbuds Bring Premium Audio Features", alt: "Smart Touchscreen Earbuds", href: "https://amzn.to/4uKYF1I", img: "assets/images/platforms/amazon/Electronics/elec3.jpg" },
-    { title: "Liphisy Tripod Makes Content Creation Easier Anywhere", alt: "Liphisy Tripod", href: "https://amzn.to/432gMEC", img: "assets/images/platforms/amazon/Electronics/elec4.jpg" },
-    { title: "Mini Mic Pro Gives Clear Audio for Content Creation", alt: "Mini Mic Pro", href: "https://amzn.to/4d8Td31", img: "assets/images/platforms/amazon/Electronics/elec5.jpg" }
-  ],
-  amazon_health: [
-    { title: "BIODANCE Hydrogel Mask Gives Glass Skin Glow", alt: "BIODANCE Hydrogel Mask", href: "https://amzn.to/4uIVis2", img: "assets/images/platforms/amazon/Health/heal1.jpg" },
-    { title: "MAREE V Line Mask Helps Sculpt & Firm Skin", alt: "MAREE V Line Mask", href: "https://amzn.to/4fetUxK", img: "assets/images/platforms/amazon/Health/heal2.jpg" },
-    { title: "Medicube Collagen Jelly Cream Gives a Glass Skin Glow", alt: "Medicube Collagen Jelly Cream", href: "https://amzn.to/4ttOJJb", img: "assets/images/platforms/amazon/Health/heal3.jpg" },
-    { title: "SeoulCeuticals Vitamin C Serum Brightens & Hydrates", alt: "SeoulCeuticals Vitamin C Serum", href: "https://amzn.to/4trb4qx", img: "assets/images/platforms/amazon/Health/heal4.jpg" },
-    { title: "TruSkin Vitamin C Serum Helps Brighten & Smooth Skin", alt: "TruSkin Vitamin C Serum", href: "https://amzn.to/4dv6IZQ", img: "assets/images/platforms/amazon/Health/heal5.jpg" }
-  ],
-  amazon_groceries: [
-    { title: "Nutricost Creatine Helps Support Strength & Performance", alt: "Nutricost Creatine", href: "https://amzn.to/4trbLjD", img: "assets/images/platforms/amazon/Groceries/cons1.jpg" },
-    { title: "Triple Strength Omega 3 Supports Daily Wellness Goals", alt: "Triple Strength Omega 3", href: "https://amzn.to/4dlelSb", img: "assets/images/platforms/amazon/Groceries/cons2.jpg" },
-    { title: "DripDrop Hydration Packets Make Staying Hydrated Easier", alt: "DripDrop Hydration Packets", href: "https://amzn.to/4dHXN8k", img: "assets/images/platforms/amazon/Groceries/cons3.jpg" },
-    { title: "LMNT Electrolytes Help Support Daily Hydration", alt: "LMNT Electrolytes", href: "https://amzn.to/4ufMjPA", img: "assets/images/platforms/amazon/Groceries/cons4.jpg" },
-    { title: "Pure Protein Shake Packs 30g Protein Per Bottle", alt: "Pure Protein Shake", href: "https://amzn.to/4noJPeS", img: "assets/images/platforms/amazon/Groceries/cons5.jpg" }
-  ]
 };
 
 
@@ -230,18 +126,6 @@ renderCards('shopee-fashion',      PRODUCTS.shopee_fashion,      'Shopee');
 renderCards('shopee-electronics',  PRODUCTS.shopee_electronics,  'Shopee');
 renderCards('shopee-health',       PRODUCTS.shopee_health,       'Shopee');
 renderCards('shopee-groceries',    PRODUCTS.shopee_groceries,    'Shopee');
-renderCards('shein-best-1',        PRODUCTS.shein_best_1,        'SHEIN');
-renderCards('shein-best-2',        PRODUCTS.shein_best_2,        'SHEIN');
-renderCards('shein-mens',          PRODUCTS.shein_mens,          'SHEIN');
-renderCards('shein-womens',        PRODUCTS.shein_womens,        'SHEIN');
-renderCards('shein-decor',         PRODUCTS.shein_decor,         'SHEIN');
-renderCards('shein-accessories',   PRODUCTS.shein_accessories,   'SHEIN');
-renderCards('amazon-best-1',       PRODUCTS.amazon_best_1,       'Amazon');
-renderCards('amazon-best-2',       PRODUCTS.amazon_best_2,       'Amazon');
-renderCards('amazon-fashion',      PRODUCTS.amazon_fashion,      'Amazon');
-renderCards('amazon-electronics',  PRODUCTS.amazon_electronics,  'Amazon');
-renderCards('amazon-health',       PRODUCTS.amazon_health,       'Amazon');
-renderCards('amazon-groceries',    PRODUCTS.amazon_groceries,    'Amazon');
 
 
 // ══════════════════════════════════════════════════════════════
@@ -368,10 +252,11 @@ function filterCategory(tag, category) {
 function routeTo(target) {
   let sectionEl, categoryKey;
 
-  if (target === 'shein-best') {
-    sectionEl = document.querySelector('.shop-section[data-section="shein"]');
-  } else if (target === 'shopee-best') {
+  if (target === 'shopee-best') {
     sectionEl = document.querySelector('.shop-section[data-section="shopee"]');
+  } else if (target === 'shopee-fashion') {
+    sectionEl = document.querySelector('.shop-section[data-section="shopee"]');
+    categoryKey = 'fashion';
   } else if (target === 'shopee-electronics') {
     sectionEl = document.querySelector('.shop-section[data-section="shopee"]');
     categoryKey = 'electronics';

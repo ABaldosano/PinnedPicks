@@ -1,7 +1,7 @@
 {
   "name": "PinnedPicks™",
   "short_name": "PinnedPicks",
-  "description": "Curated product discovery — Shopee, SHEIN & Amazon picks for Philippine shoppers.",
+  "description": "Curated product discovery — Shopee picks for Philippine shoppers.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

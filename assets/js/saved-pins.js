@@ -44,11 +44,7 @@ function initSavedPins() {
       } else {
         const category = card.closest('.category-cards')?.dataset.category || '';
         const panel    = card.closest('.category-panel')?.id || '';
-        let platform   = '';
-
-        if (panel.includes('shopee'))      platform = 'Shopee';
-        else if (panel.includes('shein'))  platform = 'SHEIN';
-        else if (panel.includes('amazon')) platform = 'Amazon';
+        const platform  = 'Shopee';
 
         currentPins.push({ title, href, image: img, category, platform });
         saveBtn.classList.add('saved');

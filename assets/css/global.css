@@ -18,8 +18,6 @@
       --border:     rgba(0, 0, 0, 0.09);
       --shadow:     0 2px 24px rgba(0, 0, 0, 0.07);
       --tag-shopee: #f05a28;
-      --tag-amazon: #ff9900;
-      --tag-shein:  #000000;
     }
 
     [data-theme="dark"] {
@@ -542,8 +540,6 @@
     }
 
     .badge-shopee { background: #f05a28; }
-    .badge-amazon { background: #ff9900; }
-    .badge-shein  { background: #1a1a1a; }
 
     .section-title {
       font-family: 'DM Serif Display', serif;
@@ -1074,10 +1070,6 @@
     }
     
     .dot-shopee { background: #f05a28; }
-    .dot-amazon { background: #ff9900; }
-    .dot-shein  { background: #1a1a1a; }
-    
-    [data-theme="dark"] .dot-shein { background: #c8c8c8; }
     
     /* Bottom bar */
     .footer-bottom {
@@ -2194,8 +2186,6 @@
     }
 
     .srp-shopee { color: #f05a28; }
-    .srp-amazon { color: #ff9900; }
-    .srp-shein  { color: var(--text); opacity: 0.6; }
 
     .search-result-arrow {
       font-size: 0.75rem;

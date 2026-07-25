@@ -6,13 +6,13 @@
 
 **A modern curated product discovery platform — Philippines**
 
-*Find trending products from Shopee, SHEIN, and Amazon without the endless scroll.*
+*Find trending products from Shopee without the endless scroll.*
 
 [![Status](https://img.shields.io/badge/status-active%20development-c8521a?style=flat-square)](https://www.pinnedpicks.gt.tc/)
 [![Built With](https://img.shields.io/badge/built%20with-HTML%20%7C%20CSS%20%7C%20Vanilla%20JS-4a90d9?style=flat-square)](#technologies)
 [![Hosted On](https://img.shields.io/badge/hosted%20on-GitHub%20Pages-24292e?style=flat-square&logo=github)](https://www.pinnedpicks.gt.tc/)
 [![License](https://img.shields.io/badge/license-Proprietary-gray?style=flat-square)](#license)
-[![Affiliate](https://img.shields.io/badge/affiliate-Shopee%20%7C%20SHEIN%20%7C%20Amazon-f05a28?style=flat-square)](#affiliate-disclosure)
+[![Affiliate](https://img.shields.io/badge/affiliate-Shopee-f05a28?style=flat-square)](#affiliate-disclosure)
 
 [Visit Site](https://www.pinnedpicks.gt.tc/) · [Submit Feedback](https://forms.gle/m9ZJ9iqkeFS1zyig6) · [Saved Pins](https://www.pinnedpicks.gt.tc/pages/saved.html)
 
@@ -32,13 +32,11 @@ The goal is simple: help people discover products worth exploring, without openi
 
 PinnedPicks™ started as an independent early-stage web platform with a clear focus — make product discovery feel intentional rather than exhausting.
 
-The platform currently curates products from three affiliate partner ecosystems:
+The platform currently curates products from one affiliate partner ecosystem:
 
 | Platform | Region Focus |
 |----------|-------------|
 | **Shopee** | Philippines & Southeast Asia |
-| **SHEIN** | Global Fashion |
-| **Amazon** | Global Essentials & Tech |
 
 Users can browse collections by category, save products locally to their device, and revisit their favorite finds through a dedicated **Saved Pins** experience — no account or login required.
 
@@ -115,7 +113,7 @@ PinnedPicks™ is in **active early-stage development**, temporarily hosted on G
 ### Planned Future Improvements
 - Advanced filtering and category search
 - Personalized or trending product signals
-- Expanded platform integrations beyond Shopee / SHEIN / Amazon
+- Expanded platform integrations beyond Shopee (Lazada planned next)
 - Richer editorial collection pages
 - Performance optimizations for Core Web Vitals
 
@@ -139,7 +137,7 @@ Design principles that guide every decision:
 
 ## Affiliate Disclosure
 
-PinnedPicks™ participates in affiliate programs with Shopee, SHEIN, Amazon, and other selected ecommerce platforms. Some outbound product links may generate a commission when purchases are made through affiliate referrals — **at no additional cost to you**.
+PinnedPicks™ participates in affiliate programs with Shopee and other selected ecommerce platforms. Some outbound product links may generate a commission when purchases are made through affiliate referrals — **at no additional cost to you**.
 
 All product selections and editorial recommendations are curated independently. Affiliate relationships do not influence which products are featured.
 
