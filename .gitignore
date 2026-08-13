@@ -1,6 +1,12 @@
 .env*
 node_modules/
 
+# Supabase CLI local cache - regenerates automatically per machine
+supabase/.temp/
+
+# Internal admin tool - laptop-only, never pushed
+pages/admin/
+
 .DS_Store
 Thumbs.db
 desktop.ini
