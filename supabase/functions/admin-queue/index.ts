@@ -10,6 +10,10 @@
 //
 // Same required secrets as intake/index.ts (INTAKE_SECRET, SUPABASE_URL,
 // SUPABASE_SERVICE_ROLE_KEY) — no new secrets needed.
+//
+// Deploy with: supabase functions deploy admin-queue --no-verify-jwt
+// (--no-verify-jwt is required — otherwise Supabase's own gateway
+// rejects the request before our x-intake-secret check ever runs.)
 
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
