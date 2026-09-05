@@ -2639,7 +2639,7 @@
 
     @media (max-width: 600px) {
       .faq-section {
-        padding: 40px 16px 52px;
+        padding: 0 16px 52px;
       }
 
       .faq-question {
