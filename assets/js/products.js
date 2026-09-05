@@ -60,6 +60,7 @@ async function loadProducts() {
     initAutoSlider();
     initSavedPins();
     if (window.rebuildSearchIndex) window.rebuildSearchIndex();
+    openDefaultCategories();
 
   } catch (err) {
     console.error('Failed to load products from Supabase:', err);
@@ -233,7 +234,7 @@ function toggleCategoryPanel(label) {
   }
 }
 
-function filterCategory(tag, category) {
+function filterCategory(tag, category, animate = true) {
   const section  = tag.closest('.shop-section');
   const allTags  = section.querySelectorAll('.cat-tag');
   const allGrids = section.querySelectorAll('.category-cards');
@@ -266,11 +267,28 @@ function filterCategory(tag, category) {
     panel.classList.add('open');
     const catSection = section.querySelector('.category-section');
     if (catSection) catSection.classList.add('cat-open');
-    panel.animate(
-      [{ maxHeight: '0px' }, { maxHeight: panel.scrollHeight + 'px' }],
-      { duration: 450, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
-    ).onfinish = () => { panel.style.maxHeight = '4000px'; };
+
+    if (animate) {
+      panel.animate(
+        [{ maxHeight: '0px' }, { maxHeight: panel.scrollHeight + 'px' }],
+        { duration: 450, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
+      ).onfinish = () => { panel.style.maxHeight = '4000px'; };
+    } else {
+      panel.style.maxHeight = '4000px';
+    }
   }
+}
+
+
+// ══════════════════════════════════════════════════════════════
+//  DEFAULT CATEGORY — opens "Fashion & Apparel" on load
+// ══════════════════════════════════════════════════════════════
+
+function openDefaultCategories() {
+  document.querySelectorAll('.shop-section').forEach(section => {
+    const tag = section.querySelector('.cat-tag[onclick*="fashion"]');
+    if (tag && !tag.classList.contains('active')) filterCategory(tag, 'fashion', false);
+  });
 }
 
 function routeTo(target) {
