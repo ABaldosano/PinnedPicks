@@ -1,11 +1,10 @@
 // ══════════════════════════════════════════════════════════════
 //  SUPABASE CONFIG
-//  Fill these in from your Supabase project → Settings → API.
 //  The anon/public key is safe to expose here — it's rate-limited
 //  and RLS-protected (read-only, active rows only). See README.
 // ══════════════════════════════════════════════════════════════
 
-const SUPABASE_URL      = 'https://jczhfwtvmwmemysazncl.supabase.co';       // e.g. https://xxxxx.supabase.co
+const SUPABASE_URL      = 'https://jczhfwtvmwmemysazncl.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impjemhmd3R2bXdtZW15c2F6bmNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ5MjI5MTQsImV4cCI6MjEwMDQ5ODkxNH0.nAKI1suIqpGFBjYZGdzBcXMDUGplVyhMWb4sJnTtjBc';
 
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -19,14 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkeletons();
   loadProducts();
 });
-
-
-// ═════════════════════════════════════════════════════════════════════
-//  product data — now fetched from Supabase instead of hardcoded.
-//  PRODUCTS keeps the same shape/keys the rest of the app expects
-//  (e.g. shopee_best_1, shopee_fashion) so renderCards(), search.js,
-//  and routeTo() don't need to change.
-// ═════════════════════════════════════════════════════════════════════
 
 const PRODUCTS = {};
 
